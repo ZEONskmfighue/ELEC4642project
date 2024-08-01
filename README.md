@@ -1,4 +1,4 @@
-# ELEC4642project
+# TELE4642project
 This project is created by Qiong, Dong, Yang and Zeng, through this project you can achieve the function of switch traffic capture and corresponding front end interfaces. The code files are used for reference only. We are happy our codes can help you or enlighten you, even if these codes are not good.
 Where to start: first of all you need a Linux environment, installed with ryu. You can check what module is need by openning the files. 
 We developed two sets of ryu controller and topology: 1, topo_star.py and ryu_control.py; 2, topo.py and ryucontroller.py. Both of them can work, but you need right start command, and each set needs three terminals to start. We suggest you use pycharm to run these codes which is what we use to develop.
