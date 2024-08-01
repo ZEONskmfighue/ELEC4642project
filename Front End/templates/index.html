@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OVS Statistics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+    <script>
+        function refreshPage() {
+            window.location.reload();
+        }
+        setInterval(refreshPage, 10000); // web refresh rate = 10s
+    </script>
+</head>
+<body>
+    <h1>OVS Statistics</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Port</th>
+                <th>RX Packets</th>
+                <th>RX Bytes</th>
+                <th>TX Packets</th>
+                <th>TX Bytes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for port, stats in data.items() %}
+            <tr>
+                <td>{{ port }}</td>
+                <td>{{ stats.rx_packets }}</td>
+                <td>{{ stats.rx_bytes }}</td>
+                <td>{{ stats.tx_packets }}</td>
+                <td>{{ stats.tx_bytes }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h1>Rate Data</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Port</th>
+                <th>Rate Rx (Mbps)</th>
+                <th>Rate Tx (Mbps)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for port, rates in rate_data.items() %}
+            <tr>
+                <td>{{ port }}</td>
+                <td>{{ rates.RateRx }}</td>
+                <td>{{ rates.RateTx }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
