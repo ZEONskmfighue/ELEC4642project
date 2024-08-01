@@ -4,20 +4,28 @@ Where to start: first of all you need a Linux environment, installed with ryu. Y
 We developed two sets of ryu controller and topology: 1, topo_star.py and ryu_control.py; 2, topo.py and ryucontroller.py. Both of them can work, but you need right start command, and each set needs three terminals to start. We suggest you use pycharm to run these codes which is what we use to develop.
 When you are starting the first set of files, first, you should key in 
 
+
 ryu-manager ryu_control.py
+
 
 to start the ryu controller first in the first terminal window. And then, you should type in 
 
+
 sudo python3 topo_star.py
+
 
 in the second terminal to start the topology, and you will open a mininet CLI that you can talk to. You can type in commands like "net" or "pingall" in the mininet CLI to check if the topo and the ryu is working correctly.
 When you are starting the second set of files, first you should type in 
 
+
 ryu-manager ryucontroller.py
+
 
 to start the ryu controller in the first terminal. Then you should type in 
 
+
 sudo mn --custom topo.py --topo simpletopo --controller=remote,ip=127.0.0.1,port=6633
+
 
 to start the topology in the second terminal. 
 Warning: you should check the file path of yours and add them correctly into the command.
@@ -38,11 +46,13 @@ The specific rule of iperf will not be given in this simple introduction. After 
 Now we have traffic. Next step, open the flaskapp.py file and run it. Now we need your third ternimal window, in which you need to type in:
 
 
-curl 
+curl http://localhost:5000/api/v1/ovs/stats?bridge_name=s0
 
+This command will start the flaskapp and allow you to save the data on your computer, and check the data by click on the link. 
+Warning: 1 in this file we create a gmail, register a aws S3 account and upload the data as json file on the S3, and you need to create your own account and configure your id keys on your computer. Otherwise there comes errors because you don't have our keys.
+2 at the end of the command is "s0", which is the name of your switch, so you have to check the name of your switch first before you type in this command. In set 1 it is 's0', in set 2 is 'a1' for the connection between h1 and h2.
 
-
-
+Final step: front interface. It is simple though. Just open and run app.py, and check your result in http://127.0.0.1:5000!
 
 
 
