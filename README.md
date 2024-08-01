@@ -10,4 +10,22 @@
 
 # Warning: you should check the file path of yours and add them correctly into the command.
 
-# Now, y
+# Now, you have correctly start your ryu controller and topology! You can test, edit the topology as you want. When you finish your exploring, we will teach you how to capture the traffic information stored inside the switch you have just created.
+
+
+
+# Welcome back! Now you have learned the basic rules of ryu and mininet. The next step is to capture————nonono, before we want to capture the traffic information we must generate some traffic, or what we found is some dead numbers doesn't change at all after the default generation of traffic when you type in those commands.
+
+# So how to generate traffic? There are a lot of methods to do that, and the method or command we use is "iperf". Turn to your second ternimal, and type in :
+h1 iperf -s &
+h2 iperf -c h1 -w 1k -t 600
+# The specific rule of iperf will not be given in this simple introduction. After that your host1 and host2 will start to send packages to each other throught the switch s0 for 600 seconds. 
+# Now we have traffic. Next step, open the flaskapp.py file and run it. Now we need your third ternimal window, in which you need to type in:
+curl 
+
+
+
+
+
+
+
