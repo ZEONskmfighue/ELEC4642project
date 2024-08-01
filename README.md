@@ -32,8 +32,7 @@ Warning: you should check the file path of yours and add them correctly into the
 Now, you have correctly start your ryu controller and topology! You can test, edit the topology as you want. When you finish your exploring, we will teach you how to capture the traffic information stored inside the switch you have just created.
 
 
-
-Welcome back! Now you have learned the basic rules of ryu and mininet. The next step is to capture————nonono, before we want to capture the traffic information we must generate some traffic, or what we found is some dead numbers doesn't change at all after the default generation of traffic when you type in those commands.
+Now you have learned the basic rules of ryu and mininet. The next step is to capture————nonono, before we want to capture the traffic information we must generate some traffic, or what we found is some dead numbers doesn't change at all after the default generation of traffic when you type in those commands.
 So how to generate traffic? There are a lot of methods to do that, and the method or command we use is "iperf". Turn to your second ternimal, and type in :
 
 
